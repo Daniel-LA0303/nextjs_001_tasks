@@ -5,7 +5,7 @@ import Task from "models/Taks";
 
 dbConnect();
 
-export default async (req, res) => {
+const handler = async (req, res) => {
 
     //6.1
     const {method, body, query: {id}} = req;
@@ -41,3 +41,5 @@ export default async (req, res) => {
             return res.status(400).json({msg: "This method is not supported"});
     }
 }
+
+export default handler;

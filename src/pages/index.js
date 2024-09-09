@@ -19,20 +19,6 @@ export default function Home({tasks}) {
   const [filteredTasks, setFilteredTasks] = useState(tasks);
   const [selectedDate, setSelectedDate] = useState(new Date());
 
-  useEffect(() => {
-    filterTasksByDate(selectedDate); 
-    console.log("Tasks:", tasks);
-    
-  }, [selectedDate, tasks]);
-
-  const formatDateToYYYYMMDD = (date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0'); 
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-  };
-
-
   const filterTasksByDate = (date) => {
     const selectedDay = formatDateToYYYYMMDD(date); // Convierte la fecha seleccionada a YYYY-MM-DD
     console.log("Fecha seleccionada para filtrar:", selectedDay);
@@ -42,6 +28,15 @@ export default function Home({tasks}) {
     });
 
     setFilteredTasks(filtered); // Actualiza el estado de las tareas filtradas
+  };
+
+
+
+  const formatDateToYYYYMMDD = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); 
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
   };
 
 
@@ -68,6 +63,12 @@ export default function Home({tasks}) {
     }
   };
 
+  useEffect(() => {
+    filterTasksByDate(selectedDate); 
+    console.log("Tasks:", tasks);
+    
+  }, [selectedDate, tasks, filterTasksByDate]);
+
 
   // console.log(tasks);
 
@@ -76,7 +77,7 @@ export default function Home({tasks}) {
       <Grid.Row>
         <Grid.Column textAlign="center">
           <h1>There aren't tasks yet</h1>
-          <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-fallo-conexion_114360-536.jpg?w=2000" alt="No tasks yet"/>
+          {/* <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-fallo-conexion_114360-536.jpg?w=2000" alt="No tasks yet"/> */}
           <div>
             <Button>
               Create a task
