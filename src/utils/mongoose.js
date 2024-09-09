@@ -9,7 +9,7 @@ export async function dbConnect (){
     //evitar que se conecte varias veces
     if(conn.isConnected) return;
 
-    const db = await connect(process.env.MONGO_URL);
+    const db = await connect("mongodb+srv://root:root@cluster0.odotr.mongodb.net/nextjs_001_db_tasks");
     // db.connections.[0].re
     conn.isConnected = db.connections[0].readyState;
 
