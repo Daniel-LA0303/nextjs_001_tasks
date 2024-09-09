@@ -2,7 +2,7 @@ import { Button, Card, CardContent, Container, Grid } from "semantic-ui-react";
 import { useRouter } from 'next/router';
 import Calendar from "react-calendar";
 import CalendarComponent from "components/CalendarComponent";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 //frontend
@@ -19,16 +19,17 @@ export default function Home({tasks}) {
   const [filteredTasks, setFilteredTasks] = useState(tasks);
   const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const filterTasksByDate = (date) => {
+  const filterTasksByDate = useCallback((date) => {
     const selectedDay = formatDateToYYYYMMDD(date); // Convierte la fecha seleccionada a YYYY-MM-DD
     console.log("Fecha seleccionada para filtrar:", selectedDay);
-
+  
     const filtered = tasks.filter((task) => {
       return task.dateAsigned === selectedDay; // Compara directamente la fecha de la tarea con la fecha seleccionada
     });
-
+  
     setFilteredTasks(filtered); // Actualiza el estado de las tareas filtradas
-  };
+  }, [tasks]); // Dependencia: tasks
+  
 
 
 
@@ -77,7 +78,6 @@ export default function Home({tasks}) {
       <Grid.Row>
         <Grid.Column textAlign="center">
           <h1>There aren't tasks yet</h1>
-          {/* <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-fallo-conexion_114360-536.jpg?w=2000" alt="No tasks yet"/> */}
           <div>
             <Button>
               Create a task

@@ -23,7 +23,7 @@ const CalendarComponent = ({tasks, onDateSelect}) => {
     <div className="custom-calendar">
       <Calendar onChange={onDateChange} value={date} />
       <br />
-      <p className='date'>Seleted date: {date.toDateString()}</p>
+      <p className='date'>Seleted date {date.toDateString()}</p>
     </div>
   );
 };

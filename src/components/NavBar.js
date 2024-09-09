@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu, Container, Button } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const NavBar = () => {
@@ -14,7 +15,12 @@ const NavBar = () => {
                 <Container>
                     <Menu.Item>
                         <Link  href={'/'}>
-                            <img src='/favicon.ico' />
+                            <Image
+                                src='/favicon.ico' 
+                                alt='Favicon' 
+                                width={32} 
+                                height={32} 
+                                />
                         </Link>
                     </Menu.Item>
                     <Menu.Menu position='right'>

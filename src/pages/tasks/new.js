@@ -78,7 +78,10 @@ const NewTask = () => {
         const data = await res.json();
         setNewTask({
             title: data.title,
-            description: data.description
+            description: data.description,
+            dateAsigned: data.dateAsigned,
+            priority: data.priority
+
         })
         console.log(data);
     }
@@ -87,7 +90,7 @@ const NewTask = () => {
       if(query.id){
         getTask();
       }
-    }, [])
+    }, [getTask, query.id])
     
 
     return (  
