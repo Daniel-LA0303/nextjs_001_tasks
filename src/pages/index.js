@@ -77,7 +77,7 @@ export default function Home({tasks}) {
     <Grid centered verticalAlign="middle" columns={1} style={{height: "80vh"}}>
       <Grid.Row>
         <Grid.Column textAlign="center">
-          <h1>There aren't tasks yet</h1>
+          <h1>There are not tasks yet</h1>
           <div>
             <Button>
               Create a task

@@ -73,24 +73,26 @@ const NewTask = () => {
         }
       }
 
-    const getTask = async () => {
-        const res = await fetch('http://localhost:3000/api/tasks/' + query.id);
-        const data = await res.json();
-        setNewTask({
-            title: data.title,
-            description: data.description,
-            dateAsigned: data.dateAsigned,
-            priority: data.priority
 
-        })
-        console.log(data);
-    }
 
-    useEffect(() => {
-      if(query.id){
-        getTask();
-      }
-    }, [getTask, query.id])
+      useEffect(() => {
+        if (query.id) {
+          const getTask = async () => {
+            const res = await fetch('http://localhost:3000/api/tasks/' + query.id);
+            const data = await res.json();
+            setNewTask({
+              title: data.title,
+              description: data.description,
+              dateAsigned: data.dateAsigned,
+              priority: data.priority
+            });
+            console.log(data);
+          };
+      
+          getTask();
+        }
+      }, [query.id]); 
+      
     
 
     return (  
