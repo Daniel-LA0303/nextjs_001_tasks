@@ -1,0 +1,192 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.react-calendar {
+  width: 100% !important;
+}
+.calender-body {
+  background-color: #e7f3f8 !important;
+}
+.react-calendar__tile--active {
+  background-color: #1b1c1d !important;
+}
+.today {
+  border: 2px solid #1f1b13 !important;
+}
+.react-calendar_month-viewdays_day {
+  margin: 12px !important;
+}
+.react-calendar__tile {
+  height: 60px; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .react-calendar__tile {
+    height: 60px; 
+    font-size: 1rem;
+  }
+
+  .react-calendar {
+    width: 90%; 
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  .react-calendar__tile {
+    height: 50px; 
+    font-size: 1rem;
+  }
+
+  .react-calendar {
+    width: 90%; 
+  }
+}
+
+
+.date{
+  font-size: 19px;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+}
+
+.card-body {
+  padding: 20px;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+.card-body .description {
+  font-size: 14px;
+}
+
+.card-body .priority {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card-body .isMade {
+  text-decoration: line-through;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card-body .isMade:hover {
+  text-decoration: none;
+}
+
+.card-body .noMade {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+ .btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.btns button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.btn{
+  width: 100%;
+  /* margin-bottom: 10px; */
+}
+
+.card-body .date {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+/* Media Query para pantallas medianas (tablets y pantallas pequeñas) */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .card-body .description {
+    font-size: 12px;
+  }
+
+  .card-body .priority,
+  .card-body .isMade,
+  .card-body .noMade {
+    font-size: 10px;
+  }
+
+  .card-body .date {
+    font-size: 16px;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ .btns button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .card-body {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .card-body .description {
+    font-size: 10px;
+  }
+
+  .card-body .priority,
+  .card-body .isMade,
+  .card-body .noMade {
+    font-size: 9px;
+  }
+
+  .card-body .date {
+    font-size: 14px;
+  }
+
+  .card-body .btns {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-body .btns button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* 
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */

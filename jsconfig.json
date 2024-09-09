@@ -1,0 +1,6 @@
+//4. evitar muchas anidaciones en los imports raiz
+{
+    "compilerOptions": {
+        "baseUrl": "src"
+    }
+}
